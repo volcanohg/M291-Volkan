@@ -190,17 +190,18 @@
 
 			<section class="action" aria-labelledby="contact-title">
 				<h2 id="contact-title">Un mot pour vous</h2>
-				<button id="welcome-button" type="button">Afficher un message</button>
+				<button id="magic" type="button">Afficher un message</button>
 				<p id="message" role="status" aria-live="polite"></p>
 			</section>
 		</div>
 	</main>
 
 	<script>
-		const welcomeButton = document.querySelector('#welcome-button');
+		const magicButton = document.querySelector('#magic');
 		const message = document.querySelector('#message');
 
-		welcomeButton.addEventListener('click', () => {
+		magicButton.addEventListener('click', () => {
+			magicButton.style.backgroundColor = '#e36414';
 			message.textContent = 'Merci de découvrir le profil de Volkan !';
 		});
 	</script>
