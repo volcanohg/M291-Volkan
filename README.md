@@ -18,4 +18,3 @@ Markdown
   Rédige le README de présentation M291
 
 _Repo cloné et ouvert dans VS Code._
-*test*
