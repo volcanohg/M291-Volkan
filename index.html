@@ -38,16 +38,15 @@
 		}
 
 		.hero {
-			display: grid;
-			grid-template-columns: minmax(0, 1fr) 220px;
-			align-items: center;
-			gap: 40px;
 			padding: clamp(40px, 8vw, 88px) clamp(24px, 8vw, 88px) 56px;
 			background: linear-gradient(135deg, #f9d9bd, #f5eee4 58%, #d8e7e1);
 		}
 
 		.profile-photo {
-			width: 220px;
+			display: block;
+			width: 100%;
+			max-width: 180px;
+			margin: 0 auto 28px;
 			aspect-ratio: 1;
 			border: 8px solid rgba(255, 253, 248, 0.85);
 			border-radius: 50%;
@@ -161,21 +160,13 @@
 				gap: 36px;
 			}
 
-			.hero {
-				grid-template-columns: 1fr;
-			}
-
-			.profile-photo {
-				width: min(220px, 70vw);
-				order: -1;
-			}
 		}
 	</style>
 </head>
 <body>
 	<main>
 		<header class="hero">
-			<img class="profile-photo" src="image.jpg" alt="Photo de profil de Volkan et de ses enfants">
+			<img class="profile-photo" src="Images/image.jpg" alt="Photo de profil de Volkan et de ses enfants">
 			<p class="eyebrow">Profil de formation</p>
 			<h1>Volkan</h1>
 			<p class="intro">
