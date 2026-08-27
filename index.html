@@ -38,8 +38,22 @@
 		}
 
 		.hero {
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) 220px;
+			align-items: center;
+			gap: 40px;
 			padding: clamp(40px, 8vw, 88px) clamp(24px, 8vw, 88px) 56px;
 			background: linear-gradient(135deg, #f9d9bd, #f5eee4 58%, #d8e7e1);
+		}
+
+		.profile-photo {
+			width: 220px;
+			aspect-ratio: 1;
+			border: 8px solid rgba(255, 253, 248, 0.85);
+			border-radius: 50%;
+			box-shadow: 0 14px 28px rgba(67, 48, 32, 0.2);
+			object-fit: cover;
+			object-position: center top;
 		}
 
 		.eyebrow {
@@ -146,12 +160,22 @@
 				grid-template-columns: 1fr;
 				gap: 36px;
 			}
+
+			.hero {
+				grid-template-columns: 1fr;
+			}
+
+			.profile-photo {
+				width: min(220px, 70vw);
+				order: -1;
+			}
 		}
 	</style>
 </head>
 <body>
 	<main>
 		<header class="hero">
+			<img class="profile-photo" src="IMG_20230927_233304.jpg" alt="Photo de profil de Volkan et de ses enfants">
 			<p class="eyebrow">Profil de formation</p>
 			<h1>Volkan</h1>
 			<p class="intro">
