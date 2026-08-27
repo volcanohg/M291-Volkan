@@ -143,6 +143,15 @@
 			outline-offset: 3px;
 		}
 
+		#magic {
+			background: #e36414;
+		}
+
+		.hero .action {
+			max-width: 360px;
+			margin: 0 auto 36px;
+		}
+
 		#message {
 			min-height: 52px;
 			margin: 18px 0 0;
@@ -168,6 +177,11 @@
 	<main>
 		<header class="hero">
 			<img class="profile-photo" src="Images/image.jpg" alt="Photo de profil de Volkan et de ses enfants">
+			<section class="action" aria-labelledby="contact-title">
+				<h2 id="contact-title">Un mot pour vous</h2>
+				<button id="magic" type="button">Afficher un message</button>
+				<p id="message" role="status" aria-live="polite"></p>
+			</section>
 			<p class="eyebrow">Profil de formation</p>
 			<h1>Volkan</h1>
 			<p class="intro">
@@ -188,11 +202,6 @@
 				</ul>
 			</section>
 
-			<section class="action" aria-labelledby="contact-title">
-				<h2 id="contact-title">Un mot pour vous</h2>
-				<button id="magic" type="button">Afficher un message</button>
-				<p id="message" role="status" aria-live="polite"></p>
-			</section>
 		</div>
 	</main>
 
@@ -207,3 +216,4 @@
 	</script>
 </body>
 </html>
+s
