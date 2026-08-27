@@ -186,28 +186,179 @@
 			}
 
 		}
+
+		/* Nouvelle composition visuelle du profil */
+		body {
+			background: #102a43;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		main {
+			width: min(1100px, calc(100% - 32px));
+			margin: 32px auto;
+			border: 0;
+			border-radius: 24px;
+			background: #fffaf2;
+		}
+
+		.hero {
+			padding: clamp(32px, 7vw, 76px);
+			text-align: center;
+			background: linear-gradient(135deg, #ffd166 0%, #f77f5b 48%, #ef476f 100%);
+		}
+
+		.eyebrow {
+			color: #102a43;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		h1 {
+			max-width: none;
+			color: #102a43;
+			font-family: Georgia, "Times New Roman", serif;
+			font-size: clamp(3.6rem, 11vw, 8rem);
+		}
+
+		.profile-photo {
+			width: min(320px, 80vw);
+			height: min(320px, 80vw);
+			margin-bottom: 28px;
+			border: 10px solid #fffaf2;
+			background: #fffaf2;
+			object-fit: contain;
+			box-shadow: 0 18px 35px rgba(16, 42, 67, 0.28);
+		}
+
+		.hero .action {
+			max-width: 380px;
+			margin: 30px auto 0;
+			border: 0;
+			border-radius: 14px;
+			background: rgba(255, 250, 242, 0.92);
+			text-align: left;
+		}
+
+		.intro {
+			max-width: 700px;
+			margin-right: auto;
+			margin-left: auto;
+			color: #102a43;
+		}
+
+		.content {
+			grid-template-columns: 1fr;
+			gap: 44px;
+			padding: clamp(30px, 6vw, 64px);
+		}
+
+		.interests {
+			max-width: 760px;
+			margin: 0 auto;
+		}
+
+		.interests h2,
+		.gallery h2 {
+			color: #102a43;
+			font-size: 1.5rem;
+		}
+
+		ul {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		li {
+			border-left: 0;
+			border-bottom: 5px solid #06d6a0;
+			border-radius: 10px;
+			background: #e8f8f3;
+			font-weight: 700;
+		}
+
+		.gallery {
+			padding-top: 12px;
+			text-align: center;
+		}
+
+		.gallery-grid {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 24px;
+		}
+
+		.gallery figure {
+			margin: 0;
+			overflow: hidden;
+			border-radius: 16px;
+			background: #f1eee8;
+			box-shadow: 0 12px 24px rgba(16, 42, 67, 0.12);
+		}
+
+		.gallery img {
+			display: block;
+			width: 100%;
+			height: 260px;
+			object-fit: cover;
+			transition: transform 220ms ease;
+		}
+
+		.gallery figure:hover img {
+			transform: scale(1.04);
+		}
+
+		.gallery figcaption {
+			padding: 14px;
+			color: #102a43;
+			font-weight: 700;
+		}
+
+		button {
+			border-radius: 8px;
+			background: #e36414;
+		}
+
+		#magic:hover,
+		#magic:focus-visible {
+			background: #c94f0b;
+		}
+
+		@media (max-width: 680px) {
+			main {
+				width: min(100% - 20px, 1100px);
+				margin: 10px auto;
+			}
+
+			ul,
+			.gallery-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.gallery img {
+				height: auto;
+				max-height: 320px;
+			}
+		}
 	</style>
 </head>
 <body>
 	<main>
 		<header class="hero">
-			<img class="profile-photo" src="Images/image.jpg" alt="Photo de profil de Volkan et de ses enfants">
-			<section class="action" aria-labelledby="contact-title">
-				<h2 id="contact-title">Un mot pour vous</h2>
-				<button id="magic" type="button">Afficher un message</button>
-				<p id="message" role="status" aria-live="polite"></p>
-			</section>
 			<p class="eyebrow">Profil de formation</p>
 			<h1>Volkan</h1>
+			<img class="profile-photo" src="Images/image.jpg" alt="Photo de profil de Volkan et de ses enfants">
 			<p class="intro">
 				Je suis en deuxième année de formation professionnelle (FPA)
 				afin d'obtenir mon CFC de médiamaticien. Passionné par le multimédia,
 				j'aime imaginer et concevoir des contenus visuels ainsi que des sites web interactifs.
 			</p>
+			<section class="action" aria-labelledby="contact-title">
+				<h2 id="contact-title">Mon univers numérique</h2>
+				<button id="magic" type="button">Afficher un message</button>
+				<p id="message" role="status" aria-live="polite"></p>
+			</section>
 		</header>
 
 		<div class="content">
-			<section aria-labelledby="interets-title">
+			<section class="interests" aria-labelledby="interets-title">
 				<h2 id="interets-title">Mes centres d'intérêt</h2>
 				<ul>
 					<li>Création de contenus visuels</li>
@@ -217,6 +368,19 @@
 				</ul>
 			</section>
 
+			<section class="gallery" aria-labelledby="gallery-title">
+				<h2 id="gallery-title">Créer, imaginer, programmer</h2>
+				<div class="gallery-grid">
+					<figure>
+						<img src="Images/image2.jpeg" alt="Illustration colorée représentant la créativité">
+						<figcaption>Ma créativité</figcaption>
+					</figure>
+					<figure>
+						<img src="Images/image3.jpeg" alt="Illustration d'un profil avec des engrenages numériques">
+						<figcaption>Mon intérêt pour le numérique</figcaption>
+					</figure>
+				</div>
+			</section>
 		</div>
 	</main>
 
