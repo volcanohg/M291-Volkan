@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>e1-6 — Prédis avant de cliquer</title>
+  <style>
+    :root { --ink:#1c1917; --band:#1c1917; --accent:#ea580c; --bg:#fffefa; --paper:#f5f5f4; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Arial, Helvetica, sans-serif; background:var(--bg); color:var(--ink); }
+    header { background:var(--band); color:#fffefa; padding:0.85rem 1.2rem; letter-spacing:.12em; text-transform:uppercase; font-size:.78rem; font-weight:700; }
+    main { max-width: 44rem; margin:0 auto; padding:1.4rem 1.1rem 3rem; }
+    h1 { font-size:1.6rem; margin:.2rem 0 0.6rem; }
+    .lead { color:#57534e; margin-bottom:1.2rem; }
+    article { background:#fff; border:1px solid #e7e5e4; margin:0 0 1.1rem; padding:1rem 1rem 0.9rem; }
+    article h2 { margin:0 0 .4rem; font-size:1.05rem; color:var(--accent); }
+    pre { background:var(--paper); padding:.75rem .8rem; overflow:auto; font-size:.85rem; line-height:1.4; }
+    button { background:var(--band); color:#fff; border:0; padding:.45rem .8rem; font-weight:700; cursor:pointer; }
+    button:hover { background:var(--accent); }
+    .out { min-height:1.4rem; margin:.55rem 0 0; padding:.45rem .55rem; background:#fff7ed; font-family: ui-monospace, monospace; font-size:.9rem; }
+  </style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Marc D�nervaud</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">10534500.0000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Marc D�nervaud</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+<mso:ContentTypeId msdt:dt="string">0x010100B084A62CD3C5F842BB23EB74256B6499</mso:ContentTypeId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+  <header>Fiche e1-6 · Prédis avant de cliquer · M291</header>
+  <main>
+    <h1>Six extraits</h1>
+    <p class="lead">Écrivez d’abord votre prédiction. Ensuite seulement, cliquez <strong>Lancer</strong>. Ouvrez la console (F12) pour voir aussi le carnet de bord.</p>
+
+    <article>
+      <h2>1 — Afficher</h2>
+      <pre>document.getElementById("out1").textContent = "Bonjour la classe";</pre>
+      <button type="button" id="b1">Lancer</button>
+      <div class="out" id="out1">…</div>
+    </article>
+
+    <article>
+      <h2>2 — Calculer</h2>
+      <pre>let a = 4;
+let b = 3;
+let total = a + b;
+document.getElementById("out2").textContent = total;</pre>
+      <button type="button" id="b2">Lancer</button>
+      <div class="out" id="out2">…</div>
+    </article>
+
+    <article>
+      <h2>3 — Compter</h2>
+      <pre>let fruits = ["pomme", "poire", "kiwi"];
+document.getElementById("out3").textContent = fruits.length;</pre>
+      <button type="button" id="b3">Lancer</button>
+      <div class="out" id="out3">…</div>
+    </article>
+
+    <article>
+      <h2>4 — Condition</h2>
+      <pre>let note = 5;
+let texte;
+if (note >= 4) {
+  texte = "suffisant";
+} else {
+  texte = "insuffisant";
+}
+document.getElementById("out4").textContent = texte;</pre>
+      <button type="button" id="b4">Lancer</button>
+      <div class="out" id="out4">…</div>
+    </article>
+
+    <article>
+      <h2>5 — Boucle simple</h2>
+      <pre>let message = "";
+for (let i = 1; i <= 3; i = i + 1) {
+  message = message + i + " ";
+}
+document.getElementById("out5").textContent = message;</pre>
+      <button type="button" id="b5">Lancer</button>
+      <div class="out" id="out5">…</div>
+    </article>
+
+    <article>
+      <h2>6 — Clic</h2>
+      <pre>let n = 0;
+document.getElementById("b6").addEventListener("click", function () {
+  n = n + 1;
+  document.getElementById("out6").textContent = n;
+});</pre>
+      <p>Cliquez <strong>plusieurs fois</strong> sur Lancer. Que fait le nombre ?</p>
+      <button type="button" id="b6">Lancer</button>
+      <div class="out" id="out6">0</div>
+    </article>
+  </main>
+  <script>
+    document.getElementById("b1").addEventListener("click", function () {
+      document.getElementById("out1").textContent = "Bonjour la classe";
+      console.log("extrait 1 : texte affiché");
+    });
+    document.getElementById("b2").addEventListener("click", function () {
+      let a = 4;
+      let b = 3;
+      let total = a + b;
+      document.getElementById("out2").textContent = total;
+      console.log("extrait 2 :", total);
+    });
+    document.getElementById("b3").addEventListener("click", function () {
+      let fruits = ["pomme", "poire", "kiwi"];
+      document.getElementById("out3").textContent = fruits.length;
+      console.log("extrait 3 :", fruits.length);
+    });
+    document.getElementById("b4").addEventListener("click", function () {
+      let note = 5;
+      let texte;
+      if (note >= 4) {
+        texte = "suffisant";
+      } else {
+        texte = "insuffisant";
+      }
+      document.getElementById("out4").textContent = texte;
+      console.log("extrait 4 :", texte);
+    });
+    document.getElementById("b5").addEventListener("click", function () {
+      let message = "";
+      for (let i = 1; i <= 3; i = i + 1) {
+        message = message + i + " ";
+      }
+      document.getElementById("out5").textContent = message;
+      console.log("extrait 5 :", message);
+    });
+    let n = 0;
+    document.getElementById("b6").addEventListener("click", function () {
+      n = n + 1;
+      document.getElementById("out6").textContent = n;
+      console.log("extrait 6 :", n);
+    });
+  </script>
+</body>
+</html>
