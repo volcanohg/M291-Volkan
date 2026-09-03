@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compteur — e1-7 (version livrée par l’IA)</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; background:#fffefa; color:#1c1917; margin:0; }
+    header { background:#1c1917; color:#fffefa; padding:.85rem 1.2rem; letter-spacing:.12em; text-transform:uppercase; font-size:.78rem; font-weight:700; }
+    main { max-width: 28rem; margin:0 auto; padding:2rem 1.1rem; }
+    .count { font-size: 4rem; font-weight:700; margin:.4rem 0 1rem; }
+    button { background:#ea580c; color:#fff; border:0; padding:.6rem 1.1rem; font-size:1rem; font-weight:700; cursor:pointer; }
+    .note { color:#57534e; font-size:.95rem; }
+  </style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Marc D�nervaud</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">10534600.0000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Marc D�nervaud</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+<mso:ContentTypeId msdt:dt="string">0x010100B084A62CD3C5F842BB23EB74256B6499</mso:ContentTypeId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+  <header>Fiche e1-7 · L’IA a tort · M291</header>
+  <main>
+    <h1>Compteur</h1>
+    <p class="note">Livré par une IA. « Ça marche. » Vraiment ?</p>
+    <p class="count" id="affiche">0</p>
+    <button type="button" id="plus">+1</button>
+  </main>
+  <script>
+    // Boîte « n » : le vrai compteur, en mémoire.
+    let n = 0;
+
+    const bouton = document.getElementById("plus");
+//avec ajouter ligne 49: document.getElementById("affiche").textContent = n
+   bouton.addEventListener("click", function () {
+  n = n + 1;
+  document.getElementById("affiche").textContent = n; // EKLENEN SATIR: Hafızadaki değeri ekrana kopyalar.
+  console.log("n vaut maintenant", n);
+
+    });
+  </script>
+</body>
+</html>
