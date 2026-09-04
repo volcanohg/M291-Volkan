@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>e1-8 — La caisse du kiosque</title>
+  <style>
+    :root { --ink:#1c1917; --band:#1c1917; --accent:#ea580c; --bg:#fffefa; --paper:#f5f5f4; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Arial, Helvetica, sans-serif; background:var(--bg); color:var(--ink); }
+    header { background:var(--band); color:#fffefa; padding:0.85rem 1.2rem; letter-spacing:.12em; text-transform:uppercase; font-size:.78rem; font-weight:700; }
+    main { max-width: 52rem; margin:0 auto; padding:1.4rem 1.1rem 3rem; }
+    h1 { font-size:1.55rem; margin:.2rem 0 .45rem; }
+    .lead { color:#57534e; margin-bottom:1.1rem; }
+    .grid { display:grid; gap:1.1rem; }
+    @media (min-width: 720px) { .grid { grid-template-columns: 1fr 1.15fr; align-items:start; } }
+    .card { background:#fff; border:1px solid #e7e5e4; padding:1rem 1rem 1.05rem; }
+    .card h2 { margin:0 0 .55rem; font-size:1.05rem; color:var(--accent); }
+    .affiche-code { background:#fff7ed; border:1px dashed #ea580c; padding:.55rem .7rem; margin:0 0 .8rem; font-size:.92rem; }
+    .panier { min-height:1.4rem; margin:.2rem 0 .7rem; padding:.45rem .55rem; background:var(--paper); font-family: ui-monospace, monospace; }
+    .panier:empty::before { content:"Rien pour l’instant."; color:#a8a29e; }
+    .total { font-size:2rem; font-weight:700; margin:.15rem 0 .85rem; }
+    .row { display:flex; flex-wrap:wrap; gap:.45rem; margin-bottom:.55rem; }
+    button { background:var(--band); color:#fff; border:0; padding:.5rem .85rem; font-weight:700; cursor:pointer; }
+    button:hover { background:var(--accent); }
+    button.ghost { background:#fff; color:var(--ink); border:1px solid #d6d3d1; }
+    button.ghost:hover { border-color:var(--accent); color:var(--accent); background:#fff; }
+    input { font:inherit; padding:.45rem .55rem; border:1px solid #d6d3d1; min-width:8rem; }
+    pre { background:var(--paper); padding:.75rem .8rem; overflow:auto; font-size:.78rem; line-height:1.4; margin:0; }
+    ol { margin:.3rem 0 0; padding-left:1.2rem; color:#44403c; }
+    ol li { margin:0 0 .35rem; }
+  </style>
+</head>
+<body>
+  <header>Fiche e1-8 · La caisse du kiosque · M291</header>
+  <main>
+    <h1>Kiosque du Paléo</h1>
+    <p class="lead">Lisez le script à droite. Écrivez votre prédiction. Ensuite seulement, faites les clics du scénario. Rechargez la page entre chaque scénario.</p>
+
+    <div class="grid">
+      <section class="card">
+        <h2>La caisse</h2>
+        <p class="affiche-code">Aujourd’hui : code <strong>PALEO</strong> — le plateau revient à zéro.</p>
+        <p>Plateau</p>
+        <p class="panier" id="panier"></p>
+        <p>Total</p>
+        <p class="total" id="affiche">0 CHF</p>
+        <div class="row">
+          <button type="button" id="frites">Frites · 6 CHF</button>
+          <button type="button" id="boisson">Boisson · 4 CHF</button>
+        </div>
+        <div class="row">
+          <label>Code <input id="code" type="text" autocomplete="off" spellcheck="false"></label>
+          <button type="button" id="promo">Appliquer</button>
+          <button type="button" class="ghost" id="vider">Vider le plateau</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Le script (celui qui tourne vraiment)</h2>
+        <pre>let total = 0;
+
+function montrer() {
+  document.getElementById("affiche").textContent = total + " CHF";
+}
+
+document.getElementById("frites").addEventListener("click", function () {
+  total = total + "6";
+  document.getElementById("panier").textContent =
+    document.getElementById("panier").textContent + "Frites ";
+  montrer();
+});
+
+document.getElementById("boisson").addEventListener("click", function () {
+  total = total + "4";
+  document.getElementById("panier").textContent =
+    document.getElementById("panier").textContent + "Boisson ";
+  montrer();
+});
+
+document.getElementById("promo").addEventListener("click", function () {
+  const code = document.getElementById("code").value;
+  if (code === "paleo") {
+    total = 0;
+    document.getElementById("panier").textContent = "";
+    montrer();
+  }
+});
+
+document.getElementById("vider").addEventListener("click", function () {
+  document.getElementById("panier").textContent = "";
+  document.getElementById("affiche").textContent = "0 CHF";
+});</pre>
+      </section>
+    </div>
+
+    <section class="card" style="margin-top:1.1rem;">
+      <h2>Les 4 scénarios</h2>
+      <ol>
+        <li>Un clic sur <strong>Frites</strong>. Que lit-on dans Total ?</li>
+        <li><strong>Frites</strong>, puis <strong>Boisson</strong>. Que lit-on dans Total ?</li>
+        <li><strong>Frites</strong>, puis vous tapez <code>PALEO</code> comme sur l’affiche, puis <strong>Appliquer</strong>. Le total revient-il à 0 ?</li>
+        <li><strong>Frites</strong>, puis <strong>Vider le plateau</strong>, puis <strong>Frites</strong> à nouveau. Que lit-on dans Total ?</li>
+      </ol>
+    </section>
+  </main>
+  <script>
+    let total = 0;
+
+    function montrer() {
+      document.getElementById("affiche").textContent = total + " CHF";
+    }
+
+    document.getElementById("frites").addEventListener("click", function () {
+      total = total + "6";
+      document.getElementById("panier").textContent =
+        document.getElementById("panier").textContent + "Frites ";
+      montrer();
+      console.log("total :", total);
+    });
+
+    document.getElementById("boisson").addEventListener("click", function () {
+      total = total + "4";
+      document.getElementById("panier").textContent =
+        document.getElementById("panier").textContent + "Boisson ";
+      montrer();
+      console.log("total :", total);
+    });
+
+    document.getElementById("promo").addEventListener("click", function () {
+      const code = document.getElementById("code").value;
+      if (code === "paleo") {
+        total = 0;
+        document.getElementById("panier").textContent = "";
+        montrer();
+      }
+      console.log("code tapé :", JSON.stringify(code));
+    });
+
+    document.getElementById("vider").addEventListener("click", function () {
+      document.getElementById("panier").textContent = "";
+      document.getElementById("affiche").textContent = "0 CHF";
+      console.log("plateau vidé, total en mémoire :", total);
+    });
+  </script>
+</body>
+</html>
