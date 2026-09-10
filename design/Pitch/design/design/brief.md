@@ -1,30 +1,47 @@
-# Brief du projet - Recettes Express
+# Brief - Recettes Express
 
-## 1. Pitch
-Application web permettant aux étudiants de trouver une idée de recette facile et rapide en moins de 15 minutes, avec des ingrédients simples du quotidien.
+### Pitch
+Recettes Express est une application web simple qui permet aux étudiants de trouver une idée de repas rapide en moins de 1 minute. Elle propose des recettes faciles à réaliser avec des ingrédients du quotidien, sans perdre de temps.
 
-## 2. Public cible (Persona)
-Lucas, 19 ans, étudiant. Il rentre tard, utilise son téléphone souvent à une main dans la cuisine et veut trouver un repas rapidement sans créer de compte ni lire de longs textes.
+### Public
+- Lucas, 19 ans, étudiant en CFC à Lausanne.
+- Rentre tard le soir, n'a pas beaucoup de matériel de cuisine.
+- Utilise son téléphone portable, souvent à une main dans la cuisine.
+- Recherche la rapidité : pas de compte obligatoire, pas de longs textes.
+- Ne veut pas de recettes complexes avec 15 ingrédients introuvables.
 
-## 3. Écrans
-- **Écran principal** : Liste des recettes avec filtres rapides et barre de recherche.
-- **Écran détail** : Fiche complète de la recette (temps, ingrédients, étapes simples).
+### Écrans
+- Écran 1 : Page d'accueil / Liste des recettes
+- Écran 2 : Fiche détail d'une recette
+- Écran 3 : Page de confirmation / Mode cuisine
 
-## 4. Contenu des fiches (30 à 50 recettes)
-Chaque fiche contient : Titre, temps de préparation, niveau de difficulté, liste des ingrédients, étapes de préparation numérotées, et une illustration.
+### Contenu de chaque écran
 
-## 5. Ambiance visuelle
-Style moderne, épuré, très lisible, axé sur la rapidité et la clarté. Grands boutons faciles à cliquer sur mobile.
+#### Écran 1 (Liste des recettes)
+- **On y voit** : Une grille de cartes de recettes avec photo, titre, temps de préparation et niveau de difficulté.
+- **On peut y faire** : Chercher une recette, filtrer par temps (ex: -15 min), cliquer sur une carte.
+- **Bouton principal** : "Filtrer les recettes"
 
-## 6. Palette de couleurs
-- **Couleur principale** : Orange chaud (#E65100) pour l'aspect culinaire/appétissant.
-- **Couleur secondaire** : Vert doux (#2E7D32) pour la fraîcheur des ingrédients.
-- **Fond** : Gris très clair (#F5F5F5) pour un confort visuel.
-- **Texte** : Sombre (#212121) pour un contraste maximal.
+#### Écran 2 (Fiche détail d'une recette)
+- **On y voit** : La photo du plat, le temps total, la liste des ingrédients simples et les étapes numérotées.
+- **On peut y faire** : Lancer le mode préparation étape par étape, revenir à la liste.
+- **Bouton principal** : "Commencer la recette"
 
-## 7. Interdits (Strictement refusé)
-- Pas de création de compte ni de connexion obligatoire.
+#### Écran 3 (Mode cuisine)
+- **On y voit** : L'étape actuelle affichée en grand texte très lisible et un minuteur.
+- **On peut y faire** : Passer à l'étape suivante, faire pause sur le minuteur.
+- **Bouton principal** : "Étape suivante"
+
+### Ambiance visuelle
+Rapide, chaleureuse, épurée. Comme un livre de cuisine moderne pour étudiants ou une fiche recette d'un magazine.
+
+### Palette
+- **Fond** : Blanc cassé / Gris très clair
+- **Texte** : Sombre / Noir
+- **Accent** : Orange chaud (rappel de la cuisine)
+- **Attention / erreur** : Rouge doux
+
+### Interdits
+- Pas de Bootstrap, pas de React, pas de compte obligatoire pour consulter.
 - Pas d'API externe payante.
-- Pas de vidéos lourdes.
-- Pas de pop-up d'abonnement ou de publicité.
-- Pas de framework complexe inutile (pure HTML/CSS/JS léger).
+- Pas de vidéos lourdes ou de pub intempestive.
