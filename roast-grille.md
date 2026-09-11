@@ -1,4 +1,13 @@
-# Exercice e2-1 — Grille de Roast
+
+
+
+
+
+
+
+
+
+# Exercice e2-1 — GrilledRoast
 
 ## Échelle de notation
 
@@ -6,7 +15,7 @@
 - **2** : insuffisant, plusieurs difficultés importantes
 - **3** : acceptable, mais perfectible
 - **4** : bon, quelques améliorations possibles
-- **5** : excellent, clair et efficace
+- **5** : excellent, clair ete
 
 ---
 
@@ -16,13 +25,14 @@
 
 | Critère | Note (1–5) | Justification courte |
 |---|---:|---|
-| Lisibilité | 2/5 | Le bloc de texte est dense et peu hiérarchisé, ce qui fatigue rapidement la lecture. |
+| Lisibilité | 2/5 | Le bloc de texte est dense et peu hiérarchisé, ce qui fatigue rapidemene la lecture. |
 | Navigation | 2/5 | L’utilisateur a du mal à repérer les zones de contenu et les points d’entrée. |
 | Feedback | 2/5 | Il manque d’indices visuels pour montrer où l’on se trouve ou ce qui est important. |
 | Cohérence | 3/5 | La mise en page reste globalement logique, mais les éléments sont mal structurés. |
-| Accessibilité | 2/5 | Le contraste, l’espacement et la taille visuelle ne favorisent pas une lecture confortable. |
+| Accessibilité | 2/5 | Le contraste, l’espacement et la taille visuelle ne favorisent pas une lecture con
 
-### Deux remarques précises
+
+Deux remarques précises
 
 1. **Observation :** Le corps de texte est présenté en un bloc continu sans titres, sous-titres ni paragraphes distincts.  
    **Élément concerné :** Le panneau central de contenu.
@@ -35,6 +45,40 @@
 > Correction proposée : Séparer l’écran en 3 blocs distincts avec un titre, des sous-titres et des paragraphes courts, puis augmenter l’espacement entre les sections.  
 > Indicateur de réussite : Test utilisateur simple avec 5 personnes qui doivent retrouver l’information principale en moins de 20 secondes.  
 > Valeur cible : 100 % des participants trouvent la section principale en moins de 20 s et donnent une note de lisibilité supérieure ou égale à 4/5.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 
@@ -98,13 +142,19 @@
 
 ### Critères de notation
 
-| Critère | Note (1–5) | Justification courte |
+| Critères | Note (1–5) | Justification |
+
 |---|---:|---|
-| Lisibilité | 4/5 | L’écran est coloré et dynamique, mais le niveau de saturation peut gêner la lecture de certains textes. |
-| Navigation | 3/5 | L’énergie visuelle capte l’attention, mais la destination des éléments n’est pas toujours évidente. |
-| Feedback | 4/5 | Les éléments décoratifs attirent le regard et les actions sont globalement compréhensibles. |
-| Cohérence | 3/5 | L’ambiance est créative, mais elle nuit parfois à l’organisation des contenus. |
-| Accessibilité | 3/5 | Les couleurs et les effets visuels peuvent être difficiles à lire pour certains utilisateurs. |
+
+| Lisibilité | 1/5 | Le texte est très difficile à lire en raison de la confusion des couleurs et du contraste.
+
+| Navigation | 2/5 | La structure n'est pas facile à comprendre et la progression reste peu intuitive. La confusion des couleurs rend également la progression difficile.
+
+| Retour d'information | 3/5 | Les interactions sont compréhensibles, mais les repères visuels sont insuffisants.
+
+| Cohérence | 3/5 | La présentation générale est claire, mais il y a un manque d'équilibre entre les éléments.
+
+| Accessibilité | 4/5 | L'espace, la simplicité et la clarté de la structure favorisent l'utilisation.
 
 ### Deux remarques précises
 
