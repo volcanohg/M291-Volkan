@@ -88,11 +88,11 @@ Deux remarques précises
 
 | Critère | Note (1–5) | Justification courte |
 |---|---:|---|
-| Lisibilité | 1/5 | Les informations se chevauchent et la lecture est difficile à cause du trop grand nombre de zones visuelles. |
-| Navigation | 1/5 | L’utilisateur ne sait pas où aller ni comment se repérer dans la structure. |
-| Feedback | 2/5 | Les changements d’état sont faibles ou peu compréhensibles, ce qui donne un sentiment de confusion. |
-| Cohérence | 2/5 | L’écran manque d’organisation et les éléments semblent dissociés les uns des autres. |
-| Accessibilité | 2/5 | Les éléments sont trop denses et mal hiérarchisés pour un public ayant besoin de repères simples. |
+| Lisibilité | 2/5 | Les textes sont éparpillés sur un fond blanc immense avec une taille d'écriture minuscule et sans hiérarchie claire. |
+| Navigation | 1/5 | La consigne pousse à un parcours absurde (Menu > Espace > Plus...) et le bouton principal est masqué « quelque part |
+| Feedback | 1/5 | Aucun indice visuel ne guide l'utilisateur ni ne confirme où se trouve réellement le bouton à cliquer. |
+| Cohérence | 2/5 | Le lien « Aide? » est isolé en haut à droite sans alignement ni structure logique avec le reste du contenu. |
+| Accessibilité | 2/5 | La taille des liens sous-lignés est trop petite et l'interactivité repose sur un jeu d'énigme inaccessible. |
 
 ### Deux remarques précises
 
