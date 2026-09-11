@@ -48,38 +48,6 @@ Deux remarques précises
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 
 ## 02 — Labyrinthe
@@ -95,18 +63,20 @@ Deux remarques précises
 | Accessibilité | 2/5 | La taille des liens sous-lignés est trop petite et l'interactivité repose sur un jeu d'énigme inaccessible. |
 
 ### Deux remarques précises
+Observation 1 : L'instruction texte demande un parcours complexe en 5 étapes (Menu > Espace > Plus > Options > Avancé) et indique que le bouton principal est masqué (« quelque part »).
 
-1. **Observation :** Les blocs de contenu sont dispersés sans logique de lecture ni de progression visuelle.  
-   **Élément concerné :** La disposition générale des sections.
+Élément concerné : Le paragraphe d'instruction principal au centre de l'écran.
 
-2. **Observation :** Les liens et boutons ne se distinguent pas assez clairement, ce qui augmente la charge cognitive.  
-   **Élément concerné :** Les éléments d’action et les menus.
+Observation 2 : Le lien « Aide? » est isolé en haut à droite en taille 12 px, sans alignement avec le bloc de texte central ni structure de navigation globale.
 
-### Proposition de correction mesurable
+Élément concerné : Le lien « Aide? » et la liste de liens menu · espace · plus.
 
-> Correction proposée : Réduire le nombre de blocs visibles, imposer une hiérarchie claire avec un point d’entrée principal et un chemin de navigation unique.  
-> Indicateur de réussite : Vérifier que l’utilisateur arrive au bon endroit dès la première interaction.  
-> Valeur cible : 80 % des testeurs trouvent la bonne destination sans aide au bout d’une minute, et aucun participant ne dit avoir été “perdu”.
+###Proposition de correction mesurable
+Correction proposée : Remplacer le texte d'énigme par un bouton d'action unique de 44 px de hauteur centré sous le titre « Bienvenue », et intégrer le lien « Aide? » dans une barre de navigation supérieure alignée à gauche avec une marge de 24 px.
+
+Indicateur de réussite : Temps nécessaire à l'utilisateur pour effectuer le premier clic utile depuis l'arrivée sur la page.
+
+Valeur cible : 100 % des testeurs cliquent sur le bouton principal en moins de 3 secondes dès le chargement de la page, sans passer par une recherche visuelle.
 
 ---
 
