@@ -63,15 +63,15 @@ Deux remarques précises
 | Accessibilité | 2/5 | La taille des liens sous-lignés est trop petite et l'interactivité repose sur un jeu d'énigme inaccessible. |
 
 ### Deux remarques précises
-Observation 1 : L'instruction texte demande un parcours complexe en 5 étapes (Menu > Espace > Plus > Options > Avancé) et indique que le bouton principal est masqué (« quelque part »).
+1. **Observation**  : L'instruction texte demande un parcours complexe en 5 étapes (Menu > Espace > Plus > Options > Avancé) et indique que le bouton principal est masqué (« quelque part »).
 
 Élément concerné : Le paragraphe d'instruction principal au centre de l'écran.
 
-Observation 2 : Le lien « Aide? » est isolé en haut à droite en taille 12 px, sans alignement avec le bloc de texte central ni structure de navigation globale.
+2.**Observation** : Le lien « Aide? » est isolé en haut à droite en taille 12 px, sans alignement avec le bloc de texte central ni structure de navigation globale.
 
 Élément concerné : Le lien « Aide? » et la liste de liens menu · espace · plus.
 
-###Proposition de correction mesurable
+### Proposition de correction mesurable
 Correction proposée : Remplacer le texte d'énigme par un bouton d'action unique de 44 px de hauteur centré sous le titre « Bienvenue », et intégrer le lien « Aide? » dans une barre de navigation supérieure alignée à gauche avec une marge de 24 px.
 
 Indicateur de réussite : Temps nécessaire à l'utilisateur pour effectuer le premier clic utile depuis l'arrivée sur la page.
