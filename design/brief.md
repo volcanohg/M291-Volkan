@@ -45,3 +45,28 @@ Rapide, chaleureuse, épurée. Comme un livre de cuisine moderne pour étudiants
 - Pas de Bootstrap, pas de React, pas de compte obligatoire pour consulter.
 - Pas d'API externe payante.
 - Pas de vidéos lourdes ou de pub intempestive.
+
+
+
+
+# Brief de projet - Recette Express
+
+## 1. Vision et Concept
+**Recette Express** est une application web conçue pour aider les personnes pressées (notamment les étudiants) à trouver rapidement des idées de repas simples à partir des ingrédients qu'ils possèdent déjà dans leur réfrigérateur.
+
+## 2. Persona Cible (Maya)
+* **Profil :** Maya, 18 ans, étudiante / apprentie médiamaticienne.
+* **Contexte :** Rentre tard chez elle, fatiguée, pas envie de faire des courses.
+* **Appareil :** Smartphone (360px de large), utilisation d'une seule main.
+* **Contrainte :** « Si ça me prend plus de 2 minutes pour trouver une recette ou si on me demande un compte, je ferme l'application. »
+* **Tâche mesurable :** Trouver une recette en moins de 15 minutes avec 3 ingrédients.
+
+## 3. Périmètre du Projet (MVP)
+* **Inclus :** Recherche par ingrédients restants, filtrage par temps (< 15 min), affichage sous forme de cartes.
+* **Exclus :** Pas de création de compte, pas d'API payante, pas de fonctionnalités sociales.
+
+## 4. Architecture des Écrans (Nom officiel des cadres)
+Les noms d'écrans suivants sont définitifs et doivent être identiques dans les wireframes :
+1. **`Liste` (Écran principal) :** Champ de recherche, puces de filtres temporels et cartes de recettes.
+2. **`Détail` (Fiche recette) :** Ingrédients complets, étapes de préparation, bouton retour.
+3. **`Filtres` (Panneau de critères) :** Options de régimes (végétarien, sans cuisson).
