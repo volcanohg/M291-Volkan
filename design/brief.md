@@ -67,6 +67,6 @@ Rapide, chaleureuse, épurée. Comme un livre de cuisine moderne pour étudiants
 
 ## 4. Architecture des Écrans (Nom officiel des cadres)
 Les noms d'écrans suivants sont définitifs et doivent être identiques dans les wireframes :
-1. **`Liste` (Écran principal) :** Champ de recherche, puces de filtres temporels et cartes de recettes.
+1. **`Liste` (Écran principal) :** Champ de recherche basé sur le contenu du réfrigérateur (« Qu'avez-vous dans votre frigo ? »), puces de filtres temporels et cartes de recettes.
 2. **`Détail` (Fiche recette) :** Ingrédients complets, étapes de préparation, bouton retour.
 3. **`Filtres` (Panneau de critères) :** Options de régimes (végétarien, sans cuisson).
