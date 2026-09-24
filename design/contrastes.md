@@ -1,6 +1,6 @@
 # Rapport de Mesure des Contrastes (WebAIM / WCAG AA)
 
-, les contrastes visuels du design retenu (Chaleureux) ont été mesurés avec WebAIM Contrast Checker.
+ les contrastes visuels du design retenu (Chaleureux) ont été mesurés avec WebAIM Contrast Checker.
 
 ## Tableau des mesures
 
