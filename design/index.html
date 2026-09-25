@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Recette Express, trouver une recette rapidement avec ce que vous avez dans votre frigo.">
+  <title>Recette Express</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@600;700&display=swap');
+
+    :root {
+      --cream: #faf6ee;
+      --cream-deep: #f9eed9;
+      --olive: #f5efe6;
+      --olive-deep: #e8efe6;
+      --card-bg: #ffffff;
+      --ink: #2c4a38;
+      --muted: #6e5223;
+      --brick: #e05a47;
+      --brick-dark: #b94736;
+      --line: #eae3d2;
+      --badge-green: #e8efe6;
+      --badge-green-text: #2c4a38;
+      --badge-ochre: #f9eed9;
+      --badge-ochre-text: #6e5223;
+      --shadow: 0 8px 20px rgba(0, 0, 0, .04);
+      --card-shadow: 0 8px 20px rgba(0, 0, 0, .04);
+      --radius: 20px;
+    }
+
+    body.dark-mode {
+      --cream: #1f2923;
+      --cream-deep: #17201b;
+      --olive: #2c3a30;
+      --olive-deep: #425443;
+      --card-bg: #263229;
+      --ink: #f5f4ec;
+      --muted: #c2ccc2;
+      --line: #536257;
+      --brick: #ef765f;
+      --brick-dark: #ff9a82;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      background-color: var(--cream);
+      background-image: linear-gradient(rgba(224, 90, 71, .025) 1px, transparent 1px), linear-gradient(90deg, rgba(224, 90, 71, .025) 1px, transparent 1px);
+      background-size: 24px 24px;
+      font-family: "Nunito", "Trebuchet MS", sans-serif;
+      line-height: 1.45;
+    }
+
+    button, input { font: inherit; }
+
+    button {
+      min-height: 48px;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      padding: 10px 16px;
+      color: var(--ink);
+      background: transparent;
+      cursor: pointer;
+      font-weight: 700;
+      transition: transform .18s ease, background-color .18s ease, border-color .18s ease;
+    }
+
+    @media (hover: hover) {
+      button:hover { transform: translateY(-2px); }
+    }
+    button:focus-visible, input:focus-visible { outline: 3px solid #1c6b58; outline-offset: 3px; }
+
+    .app-shell {
+      position: relative;
+      width: min(100% - 20px, 390px);
+      min-height: 100vh;
+      margin: 0 auto;
+      background: var(--cream);
+      box-shadow: var(--shadow);
+    }
+
+    .app-header {
+      position: sticky;
+      top: 0;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+      background: color-mix(in srgb, var(--cream) 96%, transparent);
+      backdrop-filter: blur(10px);
+    }
+
+    .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); font-family: "Quicksand", sans-serif; font-size: 1.38rem; font-weight: 700; }
+    .brand-logo { display: block; width: 48px; height: 48px; object-fit: contain; }
+    .menu-button { border-color: var(--line); border-radius: 999px; background: var(--olive); }
+    .screen { display: none; padding: 22px 16px 112px; animation: rise .35s ease both; }
+    .screen.is-active { display: block; }
+
+    @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin-bottom: 8px; font-family: "Quicksand", sans-serif; font-size: 2rem; line-height: 1.1; }
+    h2 { margin-bottom: 14px; font-family: "Quicksand", sans-serif; font-size: 1.35rem; }
+    h3 { margin-bottom: 6px; font-family: "Quicksand", sans-serif; font-size: 1.12rem; }
+    .eyebrow { margin-bottom: 4px; color: var(--brick-dark); font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .muted { color: var(--muted); }
+
+    .hero, .recipe-card, .filters-panel, .detail-panel { border: 0; border-radius: var(--radius); background: var(--olive); }
+    .hero { margin-bottom: 24px; padding: 20px; }
+    .hero p { margin-bottom: 16px; }
+    .search-label { display: block; margin-bottom: 7px; font-weight: 700; }
+    .search-input { width: 100%; min-height: 52px; border: 1px solid var(--line); border-radius: 16px; padding: 12px 14px; color: var(--ink); background: var(--card-bg); }
+    .secondary-button { margin-top: 10px; border-color: var(--line); border-radius: 999px; background: var(--card-bg); }
+
+    .quick-filters { margin-bottom: 26px; }
+    .quick-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .quick-button { border-color: var(--line); border-radius: 999px; background: var(--card-bg); padding-inline: 6px; }
+    .quick-button.is-selected { border-color: var(--brick); color: #fff; background: var(--brick); }
+    .full-button { width: 100%; margin-top: 10px; border-color: var(--line); border-radius: 999px; background: var(--card-bg); }
+
+    .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+    .result-count { color: var(--muted); font-size: .84rem; }
+    .recipe-list { display: grid; gap: 14px; }
+    .recipe-card { position: relative; display: grid; grid-template-columns: 112px minmax(0, 1fr); overflow: hidden; border-radius: 20px; background: var(--card-bg); box-shadow: var(--card-shadow); }
+    .recipe-card::after { content: ">"; position: absolute; right: 12px; top: 50%; color: var(--brick); font-size: 1.5rem; line-height: 1; transform: translateY(-50%); }
+    .recipe-image, .dish-photo { overflow: hidden; background: linear-gradient(135deg, #d4e2cf, #f4e4c9); }
+    .recipe-image img, .dish-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .recipe-image { min-height: 100%; border-radius: 16px; margin: 8px 0 8px 8px; }
+    .recipe-body { min-width: 0; padding: 14px 30px 14px 14px; }
+    .recipe-meta { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; color: var(--badge-green-text); font-size: .82rem; }
+    .recipe-meta span { padding: 4px 8px; border-radius: 999px; background: var(--badge-green); }
+    .recipe-meta span + span { color: var(--badge-ochre-text); background: var(--badge-ochre); }
+    .recipe-ingredients { margin: 0 0 12px; color: var(--muted); font-size: .9rem; }
+    .primary-button { width: 100%; border-radius: 24px; color: #fff; background: var(--brick); border-color: var(--brick); box-shadow: 0 7px 14px rgba(224, 90, 71, .2); }
+    .primary-button:hover { background: var(--brick-dark); border-color: var(--brick-dark); }
+    .back-to-top { display: block; margin: 22px auto 0; border-color: var(--line); background: var(--cream-deep); }
+    .state-message { margin: 14px 0; padding: 16px; border: 1px dashed var(--brick); border-radius: 12px; color: var(--brick-dark); background: #fff4ef; }
+    [hidden] { display: none !important; }
+
+    .detail-top { margin-bottom: 16px; }
+    .back-button { padding-inline: 0; color: var(--brick-dark); }
+    .detail-panel { overflow: hidden; background: var(--cream); }
+    .detail-title { padding: 18px 16px; border-bottom: 1px solid var(--line); background: var(--olive); }
+    .detail-meta { display: flex; flex-wrap: wrap; gap: 12px; margin: 0; color: var(--muted); font-size: .9rem; }
+    .dish-photo { min-height: 260px; }
+    .detail-section { padding: 18px 16px; border-bottom: 1px solid var(--line); }
+    .detail-section:last-of-type { border-bottom: 0; }
+    .portion-control { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 16px; }
+    .stepper { min-width: 48px; border-color: var(--line); background: var(--olive); font-size: 1.2rem; }
+    .portion-value { flex: 1; text-align: center; font-weight: 700; }
+    .check-list, .steps { margin: 0; padding-left: 22px; }
+    .check-list { padding-left: 0; list-style: none; }
+    .check-list li { display: flex; align-items: center; min-height: 48px; gap: 10px; border-bottom: 1px solid var(--line); }
+    .check-list input { width: 22px; height: 22px; accent-color: var(--brick); }
+    .steps li { min-height: 38px; padding: 4px 0; }
+    .bottom-action { position: sticky; bottom: 12px; z-index: 2; padding: 12px 16px; background: linear-gradient(transparent, var(--cream) 24%); }
+
+    .filters-panel { padding: 16px; background: var(--cream); }
+    .filter-header { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 18px; }
+    .filter-header button { min-height: 48px; padding-inline: 10px; border-color: var(--line); background: var(--olive); font-size: .78rem; }
+    .filter-group { padding: 16px 0; border-top: 1px solid var(--line); }
+    .filter-group h2 { margin-bottom: 10px; font-size: 1.05rem; }
+    .option-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .option-grid label { display: grid; place-items: center; min-height: 56px; padding: 6px; border: 1px solid var(--line); border-radius: 10px; color: var(--muted); background: var(--cream-deep); text-align: center; font-size: .82rem; cursor: pointer; }
+    .option-grid input { position: absolute; opacity: 0; }
+    .option-grid label:has(input:checked) { border: 2px solid var(--brick); color: var(--brick-dark); background: #f8d9d0; font-weight: 700; }
+    .check-options { display: grid; gap: 2px; }
+    .check-options label { display: flex; align-items: center; min-height: 48px; gap: 10px; }
+    .check-options input { width: 22px; height: 22px; accent-color: var(--brick); }
+    .filter-actions { position: sticky; bottom: 0; display: grid; gap: 8px; margin: 18px -16px -16px; padding: 12px 16px 16px; background: color-mix(in srgb, var(--cream) 97%, transparent); box-shadow: 0 -8px 20px rgba(50, 67, 53, .08); }
+    .filter-actions button:last-child { border-color: var(--line); background: var(--olive); }
+
+    .overlay { position: absolute; inset: 0; z-index: 8; display: grid; align-items: start; justify-items: end; padding: 84px 16px 12px; background: transparent; opacity: 1; transition: opacity .2s ease, visibility .2s ease; }
+    .overlay[hidden] { display: grid !important; visibility: hidden; opacity: 0; pointer-events: none; }
+    .menu-dialog { width: min(220px, calc(100vw - 32px)); padding: 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--cream); box-shadow: 0 14px 32px rgba(41, 51, 45, .18); transform: translateY(-10px) scale(.96); transform-origin: top right; transition: transform .2s ease; }
+    .overlay:not([hidden]) .menu-dialog { transform: translateY(0) scale(1); }
+    .dialog-heading { display: flex; align-items: center; justify-content: space-between; }
+    .dialog-heading button { min-width: 48px; padding: 8px; border-color: var(--line); }
+    .menu-links { display: grid; gap: 8px; margin-top: 16px; }
+    .menu-links button { text-align: left; border-color: var(--line); background: var(--olive); }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+    @media (min-width: 700px) { .app-shell { margin: 24px auto; min-height: calc(100vh - 48px); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <div class="app-shell" id="top">
+    <header class="app-header">
+      <a class="brand" href="#top" aria-label="Recette Express, accueil" data-screen-link="home"><img class="brand-logo" src="images/chef.png" alt=""> <span>Recette Express</span></a>
+      <button class="menu-button" id="menu-open" type="button" aria-haspopup="dialog" aria-controls="menu-overlay">☰ Menu</button>
+    </header>
+
+    <main>
+      <section class="screen is-active" id="screen-home" data-screen="home" aria-labelledby="home-title">
+        <div class="hero">
+          <p class="eyebrow">Dans votre cuisine</p>
+          <h1 id="home-title">On cuisine quoi ?</h1>
+          <p class="muted">Une idée simple, avec ce que vous avez déjà sous la main.</p>
+          <label class="search-label" for="fridge-input">Qu'avez-vous dans votre frigo ?</label>
+          <input class="search-input" id="fridge-input" type="search" placeholder="Ex. tomate, oignon, poulet...">
+          <button class="secondary-button" id="reset-search" type="button">Réinitialiser les filtres</button>
+        </div>
+
+        <section class="quick-filters" aria-labelledby="quick-title">
+          <div class="section-heading"><h2 id="quick-title">Temps de préparation</h2><span class="result-count" id="active-filter-label">Tous</span></div>
+          <div class="quick-row" role="group" aria-label="Temps de préparation">
+            <button class="quick-button" type="button" data-time="15">&lt; 15 min</button>
+            <button class="quick-button" type="button" data-time="30">&lt; 30 min</button>
+            <button class="quick-button is-selected" type="button" data-time="all">Tous</button>
+          </div>
+          <button class="full-button" type="button" data-go="filters">⚙ Filtres avancés</button>
+        </section>
+
+        <section aria-labelledby="results-title">
+          <div class="section-heading"><h2 id="results-title">Résultats</h2><span class="result-count" id="result-count">3 recettes</span></div>
+          <div class="state-message" id="loading-state" role="status" hidden>Recherche en cours...</div>
+          <div class="state-message" id="empty-state" role="status" hidden>Aucune recette trouvée. Essayez un autre ingrédient.</div>
+          <div class="recipe-list" id="recipe-list">
+            <article class="recipe-card" data-minutes="10" data-ingredients="tomate oeuf">
+              <div class="recipe-image"><img src="images/tomato%20omelette.jpg" alt="Omelette aux tomates avec salade et avocat" loading="lazy"></div>
+              <div class="recipe-body"><h3>Omelette aux tomates</h3><p class="recipe-meta"><span>◷ 10 min</span><span>⚡ Facile</span></p><p class="recipe-ingredients">Œufs, tomate, huile d'olive</p><button class="primary-button" type="button" data-go="detail">Voir la recette</button></div>
+            </article>
+            <article class="recipe-card" data-minutes="15" data-ingredients="poulet oignon">
+              <div class="recipe-image"><img src="images/chicken%20stir%20fry.jpg" alt="Poulet sauté aux légumes dans une poêle" loading="lazy"></div>
+              <div class="recipe-body"><h3>Poulet sauté express</h3><p class="recipe-meta"><span>◷ 15 min</span><span>⚡ Moyen</span></p><p class="recipe-ingredients">Poulet, oignon, herbes</p><button class="primary-button" type="button" data-go="detail">Voir la recette</button></div>
+            </article>
+            <article class="recipe-card" data-minutes="5" data-ingredients="tomate concombre">
+              <div class="recipe-image"><img src="images/fresh%20salad%20bowl.jpg" alt="Salade fraîche composée de légumes croquants" loading="lazy"></div>
+              <div class="recipe-body"><h3>Salade rapide</h3><p class="recipe-meta"><span>◷ 5 min</span><span>⚡ Facile</span></p><p class="recipe-ingredients">Tomate, concombre, feta</p><button class="primary-button" type="button" data-go="detail">Voir la recette</button></div>
+            </article>
+          </div>
+        </section>
+        <button class="back-to-top" type="button" id="back-to-top">▲ Retour en haut</button>
+      </section>
+
+      <section class="screen" id="screen-detail" data-screen="detail" aria-labelledby="detail-title">
+        <div class="detail-top"><button class="back-button" type="button" data-go="home">← Retour à la liste</button></div>
+        <article class="detail-panel" id="recipe-detail">
+          <header class="detail-title"><p class="eyebrow">Fiche recette</p><h1 id="detail-title">Omelette aux tomates</h1><p class="detail-meta"><span>◷ 10 min</span><span>⚡ Facile</span></p><div class="portion-control" aria-label="Nombre de portions"><button class="stepper" type="button" id="portion-minus" aria-label="Retirer une portion">−</button><span class="portion-value" id="portion-value">1 personne</span><button class="stepper" type="button" id="portion-plus" aria-label="Ajouter une portion">+</button></div></header>
+          <div class="dish-photo"><img src="images/tomato%20omelette.jpg" alt="Omelette aux tomates avec salade et avocat"></div>
+          <section class="detail-section"><h2>Ingrédients nécessaires</h2><ul class="check-list"><li><input id="ingredient-eggs" type="checkbox" checked><label for="ingredient-eggs">2 œufs</label></li><li><input id="ingredient-tomato" type="checkbox"><label for="ingredient-tomato">1 tomate</label></li><li><input id="ingredient-oil" type="checkbox"><label for="ingredient-oil">1 c. à s. d'huile d'olive</label></li></ul></section>
+          <section class="detail-section"><h2>Étapes de préparation</h2><ol class="steps"><li>Laver et couper la tomate en dés.</li><li>Battre les œufs dans un bol.</li><li>Cuire à la poêle pendant 5 minutes.</li></ol></section>
+          <div class="bottom-action"><button class="primary-button" id="cooked-button" type="button">✓ J'ai tout cuisiné !</button></div>
+        </article>
+        <div class="state-message" id="detail-error" role="alert" hidden>Recette introuvable</div>
+      </section>
+
+      <section class="screen" id="screen-filters" data-screen="filters" aria-labelledby="filters-title">
+        <div class="filters-panel">
+          <header class="filter-header"><button type="button" data-go="home">✕ Fermer</button><button type="button" id="reset-all-top">Réinitialiser tout</button></header>
+          <h1 id="filters-title">Filtres de recherche</h1>
+          <fieldset class="filter-group"><legend class="sr-only">Temps de préparation maximal</legend><h2>Temps max</h2><div class="option-grid"><label><input type="radio" name="max-time" value="10">&lt; 10 min</label><label><input type="radio" name="max-time" value="30">&lt; 30 min</label><label><input type="radio" name="max-time" value="15">&lt; 15 min</label></div></fieldset>
+          <fieldset class="filter-group"><legend class="sr-only">Régime et préférences</legend><h2>Régime & préférences</h2><div class="check-options"><label><input type="checkbox" name="preference" value="vegetarian">Végétarien</label><label><input type="checkbox" name="preference" value="raw">Sans cuisson (Froid)</label><label><input type="checkbox" name="preference" value="few">Moins de 5 ingrédients</label></div></fieldset>
+          <fieldset class="filter-group"><legend class="sr-only">Type de plat</legend><h2>Type de plat</h2><div class="check-options"><label><input type="checkbox" name="dish-type" value="hot">Plat chaud</label><label><input type="checkbox" name="dish-type" value="salad">Entrée / Salade</label><label><input type="checkbox" name="dish-type" value="dessert">Desserts express</label></div></fieldset>
+          <fieldset class="filter-group"><legend class="sr-only">Intolérances et allergies</legend><h2>Intolérances & allergies</h2><div class="check-options"><label><input type="checkbox" name="allergy" value="lactose">Sans lactose</label><label><input type="checkbox" name="allergy" value="gluten">Sans gluten</label></div></fieldset>
+          <fieldset class="filter-group"><legend class="sr-only">Niveau de difficulté</legend><h2>Niveau de difficulté</h2><div class="check-options"><label><input type="radio" name="level" value="easy">Facile</label><label><input type="radio" name="level" value="medium">Moyen</label><label><input type="radio" name="level" value="chef">Chef</label></div></fieldset>
+          <div class="filter-actions"><button class="primary-button" type="button" id="apply-filters">Appliquer les filtres (<span id="filter-total">3</span>)</button><button type="button" id="reset-filters">Réinitialiser</button></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="overlay" id="menu-overlay" role="dialog" aria-modal="true" aria-labelledby="menu-title" hidden>
+    <div class="menu-dialog"><div class="dialog-heading"><h2 id="menu-title">Menu</h2><button type="button" id="menu-close" aria-label="Fermer le menu">✕</button></div><nav class="menu-links" aria-label="Navigation principale"><button type="button" data-go="home">Accueil</button><button type="button" id="about-button">À propos</button><button type="button" id="dark-mode-button">Mode Sombre <span aria-hidden="true">○</span></button></nav></div>
+  </div>
+
+  <script>
+    const screens = document.querySelectorAll('[data-screen]');
+    const overlay = document.getElementById('menu-overlay');
+    const recipeList = document.getElementById('recipe-list');
+    const loadingState = document.getElementById('loading-state');
+    const emptyState = document.getElementById('empty-state');
+    const resultCount = document.getElementById('result-count');
+    let selectedTime = 'all';
+    let darkMode = false;
+    let portions = 1;
+    let loadingTimer;
+    let lastFocusedElement;
+
+    function showScreen(name) {
+      screens.forEach((screen) => screen.classList.toggle('is-active', screen.dataset.screen === name));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function filterRecipes() {
+      const query = document.getElementById('fridge-input').value.trim().toLowerCase();
+      const cards = [...recipeList.querySelectorAll('.recipe-card')];
+      let visible = 0;
+      cards.forEach((card) => {
+        const matchesTime = selectedTime === 'all' || Number(card.dataset.minutes) <= Number(selectedTime);
+        const matchesQuery = !query || card.dataset.ingredients.includes(query);
+        const isVisible = matchesTime && matchesQuery;
+        card.hidden = !isVisible;
+        if (isVisible) visible += 1;
+      });
+      emptyState.hidden = visible !== 0;
+      resultCount.textContent = `${visible} recette${visible > 1 ? 's' : ''}`;
+    }
+
+    function updateFilterCount() {
+      const selectedFilters = document.querySelectorAll('.filters-panel input:checked').length;
+      document.getElementById('filter-total').textContent = selectedFilters;
+    }
+
+    function resetAllFilters() {
+      document.getElementById('fridge-input').value = '';
+      selectedTime = 'all';
+      document.querySelectorAll('[data-time]').forEach((item) => item.classList.toggle('is-selected', item.dataset.time === 'all'));
+      document.getElementById('active-filter-label').textContent = 'Tous';
+      document.querySelectorAll('.filters-panel input').forEach((input) => { input.checked = false; });
+      updateFilterCount();
+      filterRecipes();
+    }
+
+    function closeMenu() {
+      overlay.hidden = true;
+      if (lastFocusedElement) lastFocusedElement.focus();
+    }
+
+    document.querySelectorAll('[data-go]').forEach((button) => button.addEventListener('click', () => { showScreen(button.dataset.go); overlay.hidden = true; }));
+    document.querySelectorAll('[data-time]').forEach((button) => button.addEventListener('click', () => {
+      selectedTime = button.dataset.time;
+      document.querySelectorAll('[data-time]').forEach((item) => item.classList.toggle('is-selected', item === button));
+      document.getElementById('active-filter-label').textContent = selectedTime === 'all' ? 'Tous' : `< ${selectedTime} min`;
+      filterRecipes();
+    }));
+    document.getElementById('fridge-input').addEventListener('input', () => {
+      clearTimeout(loadingTimer);
+      loadingState.hidden = false;
+      emptyState.hidden = true;
+      loadingTimer = setTimeout(() => { loadingState.hidden = true; filterRecipes(); }, 220);
+    });
+    document.getElementById('reset-search').addEventListener('click', resetAllFilters);
+    document.getElementById('back-to-top').addEventListener('click', () => document.getElementById('top').scrollIntoView({ behavior: 'smooth' }));
+
+    document.getElementById('menu-open').addEventListener('click', (event) => { lastFocusedElement = event.currentTarget; overlay.hidden = false; document.getElementById('menu-close').focus(); });
+    document.getElementById('menu-close').addEventListener('click', closeMenu);
+    overlay.addEventListener('click', (event) => { if (event.target === overlay) closeMenu(); });
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !overlay.hidden) closeMenu(); });
+    document.getElementById('about-button').addEventListener('click', () => alert('Recette Express vous aide à cuisiner simplement, avec les ingrédients du quotidien.'));
+    document.getElementById('dark-mode-button').addEventListener('click', (event) => { darkMode = !darkMode; document.body.classList.toggle('dark-mode', darkMode); event.currentTarget.querySelector('span').textContent = darkMode ? '●' : '○'; });
+
+    document.querySelectorAll('.filters-panel input').forEach((input) => input.addEventListener('change', updateFilterCount));
+    document.getElementById('reset-filters').addEventListener('click', resetAllFilters);
+    document.getElementById('reset-all-top').addEventListener('click', resetAllFilters);
+    document.getElementById('apply-filters').addEventListener('click', () => {
+      const maxTime = document.querySelector('input[name="max-time"]:checked');
+      selectedTime = maxTime ? maxTime.value : 'all';
+      document.querySelectorAll('[data-time]').forEach((item) => item.classList.toggle('is-selected', item.dataset.time === selectedTime));
+      document.getElementById('active-filter-label').textContent = selectedTime === 'all' ? 'Tous' : `< ${selectedTime} min`;
+      showScreen('home');
+      filterRecipes();
+    });
+    document.getElementById('portion-minus').addEventListener('click', () => { portions = Math.max(1, portions - 1); document.getElementById('portion-value').textContent = `${portions} personne${portions > 1 ? 's' : ''}`; });
+    document.getElementById('portion-plus').addEventListener('click', () => { portions = Math.min(8, portions + 1); document.getElementById('portion-value').textContent = `${portions} personne${portions > 1 ? 's' : ''}`; });
+    document.getElementById('cooked-button').addEventListener('click', (event) => { event.currentTarget.textContent = '✓ Bravo, c’est cuisiné !'; event.currentTarget.disabled = true; });
+    updateFilterCount();
+  </script>
+</body>
+</html>

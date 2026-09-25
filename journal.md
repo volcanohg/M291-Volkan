@@ -29,3 +29,9 @@ Semaine 2 (s02)
 * J'ai compris le fonctionnement séquentiel du glisser-déposer HTML (`dragstart`, `dragover`, `drop`) et l'obligation de lever le blocage par défaut du navigateur.
 * J'ai appris à évaluer une interface web de manière objective à partir de 5 critères mesurables.
 * J'ai assimilé la posture de travail avec l'IA : concevoir, décrire, vérifier et expliquer le code produit au lieu de le recopier.
+
+### Semaines 5 & 6
+  **Recette ExpressModule & Période :**  M291 — Semaines 5 & 6 (User Flow & Wireframing).   Principe Directeur : Mobile First (~360px), Règle des 60-30-10, WCAG 2.2 (Cibles 48x48px).  
+  **Livrables:** Images dans design/wireframes/ et mise à jour de design/brief.md.   Synthèse des Travaux :Semaine 5 (Flow) : Structuration du parcours utilisateur et définition des 3 écrans principaux du MVP.   
+  ## Semaine 6 (Wireframes & Direction Artistique)## 
+  Realisation des croquis fonctionnels (Zones : Header, Search, Filtres, Cartes, Action Bar).   Exploration de 3 pistes graphiques (Dark Minimal, Terroir/Chaleureuse, Moderne).   Critique comparative entre wireframe manuel et maquette IA pour éliminer le bavardage visuel et réaligner la nomenclature dans brief.md. 
