@@ -70,3 +70,9 @@ Les noms d'écrans suivants sont définitifs et doivent être identiques dans le
 1. **`Liste` (Écran principal) :** Champ de recherche basé sur le contenu du réfrigérateur (« Qu'avez-vous dans votre frigo ? »), puces de filtres temporels et cartes de recettes.
 2. **`Détail` (Fiche recette) :** Ingrédients complets, étapes de préparation, bouton retour.
 3. **`Filtres` (Panneau de critères) :** Options de régimes (végétarien, sans cuisson).
+
+
+## Critique d'alignement Wireframe vs Maquette AI (Homepage)
+ 1. **Corrections d'architecture** : Alignment strict du header. Le bouton Réinitialiser les filtres présent sur le wireframe doit être réintégré sous la barre de recherche.  
+ 2. **Éléments à supprimer1.** : Suppression des textes décoratifs ("De bonnes idées...") et des illustrations non fonctionnelles pour respecter la règle du Zéro Bavardage Visuel. Suppression du double bouton "Filtrer les recettes" en bas de page.  
+ 3. **Éléments à ajouter1.** Réintégration du bouton d'action Retour en haut ancré en bas de page et affichage explicite des premiers ingrédients directement sur les cartes de recettes comme prévu dans le croquis initial.

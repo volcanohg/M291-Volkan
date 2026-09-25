@@ -8,14 +8,14 @@
 
 ## 1. Test des 5 secondes
 - **Protocole** : Présentation de l'écran principal pendant 5 secondes, puis écran caché.
-- **Question posée** : « C'est une application pour faire quoi ? »
-- **Réponse de l'utilisateur** : « Une application de recettes de cuisine rapides avec les ingrédients du frigo. »
+- **Question posée** :  C'est une application pour faire quoi ?
+- **Réponse de l'utilisateur** : « Une application de recettes de cuisine rapides avec les ingrédients du frigo. 
 - **Résultat & Analyse** : **RÉUSSI**. La hiérarchie visuelle, le titre et l'illustration d'en-tête transmettent immédiatement le propos de l'application sans confusion.
 
 ---
 
 ## 2. Test de localisation (Tâche unique du persona)
-- **Consigne donnée** : « Montrez du doigt où vous tapoteriez pour trouver un repas végétarien prêt en moins de 15 minutes. »
+- **Consigne donnée** : Montrez du doigt où vous tapoteriez pour trouver un repas végétarien prêt en moins de 15 minutes. 
 - **Observation du comportement** :
   - Le doigt s'est dirigé immédiatement vers la zone des puces de filtres rapides sous la barre de recherche.
   - L'utilisateur a d'abord appuyé sur la puce « < 15 min » puis sur « Végétarien ».
