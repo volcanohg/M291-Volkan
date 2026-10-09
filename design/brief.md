@@ -76,3 +76,9 @@ Les noms d'écrans suivants sont définitifs et doivent être identiques dans le
  1. **Corrections d'architecture** : Alignment strict du header. Le bouton Réinitialiser les filtres présent sur le wireframe doit être réintégré sous la barre de recherche.  
  2. **Éléments à supprimer1.** : Suppression des textes décoratifs ("De bonnes idées...") et des illustrations non fonctionnelles pour respecter la règle du Zéro Bavardage Visuel. Suppression du double bouton "Filtrer les recettes" en bas de page.  
  3. **Éléments à ajouter1.** Réintégration du bouton d'action Retour en haut ancré en bas de page et affichage explicite des premiers ingrédients directement sur les cartes de recettes comme prévu dans le croquis initial.
+
+ ### Interdits précis
+- Pas de création de compte obligatoire avant de consulter les recettes.
+- Pas de texte dense ni d'explications longues (phrases courtes uniquement).
+- Pas de boutons trop petits (zone d'interaction strictement ≥ 48x48px).
+- Pas de plus de 3 couleurs principales (respect strict de la règle 60-30-10).
