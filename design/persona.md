@@ -1,6 +1,6 @@
 # Persona - Lucas Morel
 
-- **Prénom et Âge** : Lucas, 19 ans
+- **Prénom et Âge** : Lucas, 18 ans
 - **Contexte** : Étudiant en CFC à Lausanne, rentre chez lui à 18h30 après les cours et la journée de cours/stage. Il n'a pas beaucoup d'équipements de cuisine.
 - **Appareil** : Samsung Galaxy S23, souvent utilisé à une main dans la cuisine.
 - **Citation** : « Si je dois créer un compte ou lire un roman juste pour cuire des pâtes, j'abandonne. »

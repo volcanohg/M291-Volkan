@@ -4,7 +4,7 @@
 Recettes Express est une application web simple qui permet aux étudiants de trouver une idée de repas rapide en moins de 1 minute. Elle propose des recettes faciles à réaliser avec des ingrédients du quotidien, sans perdre de temps.
 
 ### Public
-- Lucas, 19 ans, étudiant en CFC à Lausanne.
+- Lucas, 18 ans, étudiant en CFC à Lausanne.
 - Rentre tard le soir, n'a pas beaucoup de matériel de cuisine.
 - Utilise son téléphone portable, souvent à une main dans la cuisine.
 - Recherche la rapidité : pas de compte obligatoire, pas de longs textes.
