@@ -14,6 +14,10 @@
 
 
 # M291 — Volkan
+
+## En ligne
+[https://volcanohg.github.io/M291-Volkan/](https://volcanohg.github.io/M291-Volkan/)
+
 Je suis actuellement en deuxième année de formation professionnelle pour adultes (FPA) afin d'obtenir mon CFC de **médiamaticienne**.
 
 ## Ce que je veux apprendre
@@ -34,5 +38,4 @@ Markdown
 
 _Repo cloné et ouvert dans VS Code._
 
-## En ligne
-[https://volcanohg.github.io/M291-Volkan/](https://volcanohg.github.io/M291-Volkan/)
+
