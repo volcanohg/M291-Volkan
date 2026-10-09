@@ -7,7 +7,7 @@
 - **Feedback** : Immédiat et explicite. La puce active en orange dynamique et le bouton principal « Filtrer les recettes » en bas de page indiquent clairement les actions possibles.
 - **Cohérence** : Excellente. Le fond crème, les touches de couleur terracotta et les illustrations légères créent une atmosphère harmonieuse (« cuisine le dimanche »).
 - **Accessibilité** : Très bonne. Les contrastes entre le texte sombre, les fonds de cartes blancs et la couleur d'accentuation orange respectent les critères visuels sans agresser l'œil.
-- **Fidélité au brief** : Parfaitement aligné avec le persona Maya. L'interface est rassurante, chaleureuse et conçue pour une recherche de repas en moins de deux minutes.
+- **Fidélité au brief** : Parfaitement aligné avec le persona Lucas. L'interface est rassurante, chaleureuse et conçue pour une recherche de repas en moins de deux minutes.
 
 ## Synthèse
 - **Forces** : Style très accueillant, excellente ergonomie mobile, boutons d'action très clairs.

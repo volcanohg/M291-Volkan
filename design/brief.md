@@ -54,8 +54,8 @@ Rapide, chaleureuse, épurée. Comme un livre de cuisine moderne pour étudiants
 ## 1. Vision et Concept
 **Recette Express** est une application web conçue pour aider les personnes pressées (notamment les étudiants) à trouver rapidement des idées de repas simples à partir des ingrédients qu'ils possèdent déjà dans leur réfrigérateur.
 
-## 2. Persona Cible (Maya)
-* **Profil :** Maya, 18 ans, étudiante / apprentie médiamaticienne.
+## 2. Persona Cible (LUCAS)
+* **Profil :** Lucas, 18 ans, étudiante / apprentie médiamaticienne.
 * **Contexte :** Rentre tard chez elle, fatiguée, pas envie de faire des courses.
 * **Appareil :** Smartphone (360px de large), utilisation d'une seule main.
 * **Contrainte :** « Si ça me prend plus de 2 minutes pour trouver une recette ou si on me demande un compte, je ferme l'application. »

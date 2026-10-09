@@ -1,3 +1,18 @@
+# M291 - Projet Recette Express
+
+
+## 🎨 Évaluation M291 - Liens directs
+
+- **Dossier Design Recette Express :** [Consulter le Dossier Design complet](./design/)
+- **Prototype Web (index.html) :** [Ouvrir le prototype Recette Express](./index.html)
+
+## 📌 Présentation du Projet
+**Recette Express** est une application web Mobile First conçue pour permettre aux étudiants de trouver rapidement une idée de repas avec les ingrédients disponibles dans leur réfrigérateur.
+
+- **Direction visuelle :** Piste B (Chaleureuse / Terroir)
+- **Démarche :** Mobile First (~360px), conformité WCAG 2.2 (zones d'interaction ≥ 48x48px)
+
+
 # M291 — Volkan
 Je suis actuellement en deuxième année de formation professionnelle pour adultes (FPA) afin d'obtenir mon CFC de **médiamaticienne**.
 
