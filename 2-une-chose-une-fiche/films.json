@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "titre": "Interstellar",
+    "duree": 169,
+    "genre": "Science-Fiction",
+    "sousTitres": true
+  },
+  {
+    "id": 2,
+    "titre": "12 Angry Men",
+    "duree": 96,
+    "genre": "Drame",
+    "sousTitres": false
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "nom": "Taboulé",
+    "personnes": 4,
+    "minutes": 20,
+    "vegetarien": true,
+    "difficulte": "facile"
+  },
+  {
+    "id": 2,
+    "nom": "Salade César",
+    "personnes": 2,
+    "minutes": 15,
+    "vegetarien": false,
+    "difficulte": "moyen"
+  }
+]
