@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "nom": "Violon 3/4",
+    "famille": "cordes",
+    "prix": 25,
+    "disponible": true,
+    "taille": "enfant",
+    "description": "Avec étui et archet."
+  },
+  {
+    "id": 2,
+    "nom": "Violon 3/4",
+    "famille": "cordes",
+    "prix": 25,
+    "disponible": false,
+    "taille": "enfant",
+    "description": "Étui neuf, archet à remplacer."
+  },
+  {
+    "id": 3,
+    "nom": "Flûte traversière",
+    "famille": "vents",
+    "prix": 30,
+    "disponible": true,
+    "taille": "adulte",
+    "description": "Révisée en août."
+  }
+]
