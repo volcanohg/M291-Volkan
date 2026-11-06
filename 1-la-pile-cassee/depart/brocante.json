@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "objet": "Lampe de bureau Art déco",
+    "prix": 45,
+    "vendu": false,
+    "etat": "Très bon"
+  },
+  {
+    "id": 2,
+    "objet": "Horloge comtoise",
+    "prix": 280,
+    "vendu": false,
+    "etat": "À réviser"
+  },
+  {
+    "id": 3,
+    "objet": "Lot de 12 vinyles",
+    "prix": 30,
+    "vendu": true,
+    "etat": "Bon"
+  },
+  {
+    "id": 4,
+    "objet": "Machine à écrire Hermes",
+    "prix": 120,
+    "vendu": false,
+    "etat": "Très bon"
+  },
+  {
+    "id": 5,
+    "objet": "Vélo de course des années 80",
+    "prix": 350,
+    "vendu": false,
+    "etat": "Bon"
+  },
+  {
+    "id": 6,
+    "objet": "Paire de jumelles",
+    "prix": 25,
+    "vendu": false,
+    "etat": "Comme neuf"
+  }
+]
