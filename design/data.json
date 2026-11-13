@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "nom": "Taboulé",
+    "personnes": 4,
+    "minutes": 20,
+    "vegetarien": true,
+    "difficulte": "facile"
+  },
+  {
+    "id": 2,
+    "nom": "Salade César",
+    "personnes": 2,
+    "minutes": 15,
+    "vegetarien": false,
+    "difficulte": "moyen"
+  },
+  {
+    "id": 3,
+    "nom": "Risotto aux champignons",
+    "personnes": 4,
+    "minutes": 25,
+    "vegetarien": true,
+    "difficulte": "moyen"
+  },
+  {
+    "id": 4,
+    "nom": "Curry de légumes",
+    "personnes": 3,
+    "minutes": 30,
+    "vegetarien": true,
+    "difficulte": "facile"
+  },
+  {
+    "id": 5,
+    "nom": "Lasagnes au poulet",
+    "personnes": 4,
+    "minutes": 40,
+    "vegetarien": false,
+    "difficulte": "moyen"
+  }
+]
